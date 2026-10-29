@@ -42,7 +42,7 @@ function validateTexts(resume: string, job: string) {
 }
 
 export const analyzeResume = createServerFn({ method: "POST" })
-  .inputValidator((input: { resume: string; job: string }) => input)
+  .validator((input: { resume: string; job: string }) => input)
   .handler(async ({ data }): Promise<{ analysis: Analysis; score: number | null } | { error: string }> => {
     let texts;
     try {
@@ -83,7 +83,7 @@ Nunca diga que a pessoa não possui a competência; diga que não foram encontra
   });
 
 export const generateResume = createServerFn({ method: "POST" })
-  .inputValidator(
+  .validator(
     (input: {
       resume: string;
       job: string;
