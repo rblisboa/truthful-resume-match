@@ -4,7 +4,7 @@ const BASE_URL = "https://ai.gateway.lovable.dev/v1";
 export const MODEL = "openai/gpt-6-astra";
 
 export function createGatewayModel() {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env['LOVABLE_API_KEY'];
   if (!apiKey) throw new Error("CONFIG");
   let runId: string | undefined;
   const provider = createOpenAI({

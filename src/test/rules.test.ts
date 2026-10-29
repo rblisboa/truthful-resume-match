@@ -62,7 +62,7 @@ describe("compatibilidade", () => {
       },
       "Analista com experiência em Excel.",
     );
-    expect(out.requirements[0].status).toBe("nao_identificado");
-    expect(out.requirements[0].evidence).toBeNull();
+    expect(out.requirements[0]!.status).toBe("nao_identificado");
+    expect(out.requirements[0]!.evidence).toBeNull();
   });
 });

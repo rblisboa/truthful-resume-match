@@ -51,7 +51,7 @@ export async function extractText(file: File): Promise<string> {
         if (line) lines.push(line);
         pages.push(lines.join("\n"));
       }
-      await doc.destroy();
+      await doc.cleanup();
       text = pages.join("\n\n");
     } else {
       const mammoth = await import("mammoth");
